@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuário</title>
+    <link rel="stylesheet" href="/css/perfil.css">
+</head>
+<body>
+    <div class="left-container">
+        <!-- Botão do menu hambúrguer (visível apenas em dispositivos móveis) -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            &#9776; <!-- Ícone de hambúrguer -->
+        </div>
+
+        <!-- Menu de navegação -->
+        <nav class="menu">
+            <ul>
+                <li><a href="/perfil" class="dynamic-usuarioId">Perfil</a></li>
+                <li><a href="/registrar" class="dynamic-usuarioId">Nova Medida</a></li>
+                <li><a href="/historico" class="dynamic-usuarioId">Histórico de Medidas</a></li>
+                <li><a href="/login">Sair</a></li>
+            </ul>
+        </nav>
+
+        <div class="profile-box">
+            <h2>Perfil do Usuário</h2>
+
+            <!-- Seção de foto -->
+            <div class="photo-container">
+                <img id="profile-picture" src="/images/do-utilizador.png" alt="Foto do perfil">
+                <input type="file" id="upload-photo" accept="image/*">
+            </div>
+
+            <!-- Exibir informações de perfil -->
+            <div class="profile-info">
+                <p><strong>Nome:</strong> <span id="nome"></span></p>
+                <p><strong>Sobrenome:</strong> <span id="sobrenome"></span></p>
+                <p><strong>Data de Nascimento:</strong> <span id="data_nasc"></span></p>
+                <p><strong>Tipo de Diabetes:</strong> <span id="tipo_diabetes"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Data da Última Aferição:</strong> <span id="ultima_afericao"></span></p>
+            </div>
+
+            <div class="botao-container">
+                <button class="btn-alterar">Alterar</button>
+                <button  class="btn-deletar">Deletar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-container"></div>
+
+    <!-- Script para carregar automaticamente os dados do usuário -->
+    <script>
+        // Função para buscar dados do perfil e exibir na página
+        async function carregarPerfil() {
+    try {
+        const response = await fetch('/perfil/dados');
+        if (response.ok) {
+            const usuario = await response.json();
+            console.log('Dados do usuário carregados:', usuario); // Verificar dados recebidos
+
+            // Exibir os dados no HTML
+            document.getElementById('nome').textContent = usuario.nome;
+            document.getElementById('sobrenome').textContent = usuario.sobrenome;
+
+            // Formatando a data de nascimento
+            const dataNascimento = new Date(usuario.data_nasc);
+            const dataFormatada = dataNascimento.toLocaleDateString('pt-BR');
+            document.getElementById('data_nasc').textContent = dataFormatada;
+
+            document.getElementById('tipo_diabetes').textContent = usuario.tipo_diabetes;
+            document.getElementById('email').textContent = usuario.email;
+        } else {
+            console.error('Erro ao carregar perfil:', response.status);
+        }
+    } catch (error) {
+        console.error('Erro ao buscar dados do perfil:', error);
+    }
+}
+
+    
+        // Carregar perfil ao abrir a página
+        carregarPerfil();
+    </script>
+    
+    
+    <script src="/js/menu.js"></script>
+</body>
+</html>
