@@ -66,8 +66,6 @@ Certifique-se de que os seguintes softwares estejam instalados:
    cd glicnote
    npm install
    npm start
-   
-
 
 ## Contribuição
 
