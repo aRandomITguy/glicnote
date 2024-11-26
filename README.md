@@ -1,12 +1,12 @@
-# Diário de Glicemia
+# GlicNote
 
-O **Diário de Glicemia** é uma plataforma desenvolvida para o monitoramento contínuo e eficiente dos níveis de glicose no sangue. Projetado para pacientes com Diabetes Tipo 1 e Tipo 2, o aplicativo permite registrar leituras diárias de glicemia, gerar relatórios históricos e acompanhar a evolução do controle glicêmico ao longo do tempo.
+O **GlicNote** é uma plataforma desenvolvida para o monitoramento contínuo e eficiente dos níveis de glicose no sangue. Projetado para pacientes com Diabetes Tipo 1 e Tipo 2, o aplicativo permite registrar leituras diárias de glicemia, gerar relatórios históricos e acompanhar a evolução do controle glicêmico ao longo do tempo.
 
 ---
 
 ## 📋 Visão do Produto
 
-O objetivo principal do **Diário de Glicemia** é criar uma experiência intuitiva e fácil de usar para pacientes e cuidadores, garantindo acesso a dados organizados e claros que possam ser utilizados para melhorar o acompanhamento do tratamento.
+O objetivo principal do **GlicNote** é criar uma experiência intuitiva e fácil de usar para pacientes e cuidadores, garantindo acesso a dados organizados e claros que possam ser utilizados para melhorar o acompanhamento do tratamento.
 
 ---
 
@@ -28,7 +28,7 @@ Facilitar o monitoramento diário dos níveis de glicose, promovendo a adesão a
 ## 📂 Estrutura do Projeto
 
 ```plaintext
-/diario-glicemia
+/GlicNote
 ├── ScriptDDL/          # Scripts para configuração do banco de dados
 ├── config/             # Configurações do servidor e ambiente
 ├── controllers/        # Controladores da aplicação
@@ -80,7 +80,7 @@ Contribuições são bem-vindas! Para contribuir com este projeto:
 ## Autores
 
 - **Thiago Cezimbra Furlani** - *Desenvolvedor principal* - [GitHub](https://github.com/ThiagoCezimbra)
-- **Gustavo Lemos Almeida Andrade** - *Designer*
+- **Gustavo Lemos Almeida Andrade** - *Designer & Front-End*
 - **Cezar Navoscone Roman** - *Documentação & Git* - [GitHub](https://github.com/aRandomITguy)
 - **Gabriela de Melo Arruda** - *Documentação*
 - **Arthur Damasceno Gomes** - *Documentação*
